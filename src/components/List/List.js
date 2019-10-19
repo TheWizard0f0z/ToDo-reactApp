@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./List.scss";
-import Hero from "../Hero/Hero.js";
-import Column from "../Column/Column.js";
-import Creator from "../Creator/Creator.js";
+import Hero from "../Hero/Hero";
 import PropTypes from "prop-types";
+import Column from "../Column/Column";
 import { settings } from "../../data/dataStore";
 import ReactHtmlParser from "react-html-parser";
+import Creator from "../Creator/Creator";
 
 class List extends React.Component {
   state = {
@@ -40,7 +40,7 @@ class List extends React.Component {
   render() {
     return (
       <section className={styles.component}>
-        <Hero titleText={this.props.title} imageImg={this.props.image} />
+        <Hero titleText={this.props.title} imageUrl={this.props.image} />
         <div className={styles.description}>{ReactHtmlParser(this.props.description)}</div>
         <div className={styles.columns}>
           {this.state.columns.map(({ key, ...columnProps }) => (
